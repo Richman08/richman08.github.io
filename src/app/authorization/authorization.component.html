@@ -1,0 +1,25 @@
+<form  [formGroup]='loginForm' class="auth-form-container">
+  <h3>Registration</h3>
+
+  <mat-form-field class="form-input">
+    <input 
+      formControlName='email'
+      matInput
+      type="email"
+      id="email"
+      placeholder="Enter e-mail"
+      #email/>
+  </mat-form-field>  
+  <mat-form-field class="form-input">
+    <input 
+      formControlName='password'
+      matInput
+      type="password"
+      id='password'
+      placeholder="Enter password"
+      value=""
+      #password>
+  </mat-form-field>
+  <button (click)="login()" mat-raised-button type="submit" class="submitBtn">Login</button>
+</form>
+
