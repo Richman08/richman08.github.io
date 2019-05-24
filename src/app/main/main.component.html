@@ -3,9 +3,9 @@
   <h2>List of cryptocurrency </h2>
   
   <mat-list role="list" *ngIf="cryptos">
-    <mat-list-item role="listitem" *ngFor="let crypto of objectKeys(cryptos)" class="crypto-list">
-      <span class="cryptoName">{{ crypto }} </span>
-      <span class="currency"> : {{ cryptos[crypto].USD | currency:'USD' }}</span>
+    <mat-list-item role="listitem" *ngFor="let crypto of cryptos" class="crypto-list">
+      <span class="cryptoName">{{ crypto.Name }} </span>
+      <span class="currency"> : {{ crypto.USD | currency:'USD' }}</span>
     </mat-list-item>
   </mat-list>
     
