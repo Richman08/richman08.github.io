@@ -13,11 +13,11 @@ export class CryptoService {
   getCurrency(){
    return  this._http.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,LTC&tsyms=USD')
    .pipe(
-     map(res =>this.setCurrrensyData(res))
+     map(res =>this.setCurrencyData(res))
    )
   }
 
-  private setCurrrensyData(res): Array<ICrypto> {
+  private setCurrencyData(res): Array<ICrypto> {
     let result  = [];
     const key = Object.keys(res)
     key.forEach(inst => {
