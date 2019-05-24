@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CryptoService } from '../shared/services/crypto/crypto.service';
+import { AuthService } from '../shared/services/auth/auth.service';
+
 
 @Component({
   selector: 'app-main',
@@ -8,15 +10,17 @@ import { CryptoService } from '../shared/services/crypto/crypto.service';
 })
 export class MainComponent implements OnInit {
 
-  cryptos = [
-    {name: 'Bitcoin', rate: '8000'},
-    {name: 'Ethereum', rate: '0.256'},
-    {name: 'XRP', rate: '3513'}
-  ]
-  constructor(public crypto: CryptoService) {
-   }
+  objectKeys = Object.keys;
+  cryptos: any;
+
+  constructor(private _crypto: CryptoService,  public auth: AuthService,) { }
 
   ngOnInit() {
+    this._crypto.getCurrency()
+      .subscribe(res => {
+        this.cryptos = res;
+        console.log(res)
+      })
   }
 
-}
+} 

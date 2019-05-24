@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
-import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-authorization',
@@ -15,7 +15,7 @@ export class AuthorizationComponent implements OnInit {
     this._buildForm();
   }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
   protected login() {

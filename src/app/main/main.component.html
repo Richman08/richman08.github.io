@@ -1,7 +1,14 @@
-<h2>List of cryptocurrency </h2>
+<div class="container">
+  
+  <h2>List of cryptocurrency </h2>
+  
+  <mat-list role="list" *ngIf="cryptos">
+    <mat-list-item role="listitem" *ngFor="let crypto of objectKeys(cryptos)" class="crypto-list">
+      <span class="cryptoName">{{ crypto }} </span>
+      <span class="currency"> : {{ cryptos[crypto].USD | currency:'USD' }}</span>
+    </mat-list-item>
+  </mat-list>
+    
+  <button (click)="auth.logout()" mat-raised-button type="button" class="submitBtn">Log out</button>
+</div>
 
-<ul>
-  <li *ngFor="let crypto of cryptos">
-    {{ crypto.name }} : {{ crypto.rate }}
-  </li>
-</ul>
